@@ -7,6 +7,7 @@
 #include <list>
 #include <fstream>
 #include <sstream>
+#include <iostream>
 
 namespace sylar
 {
@@ -52,6 +53,9 @@ public:
     virtual ~LogAppender();
     virtual void Log(LogLevel::Level, LogEvent::ptr event) = 0;
 
+    void setFormatter(LogFormatter::ptr mater) { m_format = mater; }
+    LogFormatter getFormatter() const { return m_format; }
+
 protected:
     LogLevel::Level m_level;
     LogFormatter::ptr m_format;
@@ -64,11 +68,11 @@ public:
     Logger(const std::string& name = "root");
     void Log(LogLevel::Level level, LogEvent::ptr event);
 
-    void debug(LogEvent::ptr event);
-    void info(LogEvent::ptr event);
-    void warn(LogEvent::ptr event);
-    void error(LogEvent::ptr event);
-    void fatal(LogEvent::ptr event);
+    void debug(LogLevel::Level level, LogEvent::ptr event);
+    void info(LogLevel::Level level, LogEvent::ptr event);
+    void warn(LogLevel::Level level, LogEvent::ptr event);
+    void error(LogLevel::Level level, LogEvent::ptr event);
+    void fatal(LogLevel::Level level, LogEvent::ptr event);
 
     void addAppender(LogAppender::ptr appender);
     void delAppender(LogAppender::ptr appender);

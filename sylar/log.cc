@@ -2,8 +2,8 @@
 namespace sylar
 {
     
-Logger::Logger(conse std::string& name)
-    m_name(name){
+Logger::Logger(const std::string& name)
+    :m_name(name){
 }
 
 void Logger::Log(LogLevel::Level level, LogEvent::ptr event){
@@ -14,23 +14,23 @@ void Logger::Log(LogLevel::Level level, LogEvent::ptr event){
     }
 }
 
-void Logger::debug(LogEvent::ptr event){
+void Logger::debug(LogLevel::Level level, LogEvent::ptr event){
     debug(LogLevel::DEBUG, event);
 }
 
-void Logger::info(LogEvent::ptr event){
+void Logger::info(LogLevel::Level level, LogEvent::ptr event){
     debug(LogLevel::INFO, event);
 }
 
-void Logger::warn(LogEvent::ptr event){
-    debug(LogLevel::WARN, event);
+void Logger::warn(LogLevel::Level level, LogEvent::ptr event){
+    debug(LogLevel::Level::WARN, event);
 }  
 
-void Logger::error(LogEvent::ptr event){
+void Logger::error(LogLevel::Level level, LogEvent::ptr event){
     debug(LogLevel::ERROR, event);
 }
 
-void Logger::fatal(LogEvent::ptr event){
+void Logger::fatal(LogLevel::Level level, LogEvent::ptr event){
     debug(LogLevel::FATAL, event);
 }
 
@@ -42,7 +42,7 @@ void Logger::delAppender(LogAppender::ptr appender){
     for(auto i = Logger::m_appenders.begin(),
         e = Logger::m_appenders.end(); i != e; ++i){
         if(*i == appender){
-            Logger::m_appenders.erase(appender);
+            Logger::m_appenders.erase(i);
         }
     }
     return;
@@ -55,10 +55,10 @@ void StdoutLogAppender::Log(LogLevel::Level level, LogEvent::ptr event){
 }
 
 FileLogAppender::FileLogAppender(const std::string& name)
-    m_filename(name){
+    :m_filename(name){
 }
 
-FileLogAppender::Log(LogLevel::Level level, LogEvent::ptr event){
+void FileLogAppender::Log(LogLevel::Level level, LogEvent::ptr event){
     if(level >= m_level){
         m_filestream << m_format->format(event);
     }
