@@ -8,6 +8,8 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <ostream>
+#include <vector>
 
 namespace sylar
 {
@@ -17,6 +19,13 @@ class LogEvent{
 public:
     typedef std::shared_ptr<LogEvent> ptr;
     LogEvent();
+    const char* getFile(){ return m_file; }
+    int32_t getLine(){ return m_line; }
+    int32_t getElpase(){ return m_elpase; }
+    int32_t getThreadId(){ return m_threadid; }
+    int32_t getFiberId(){ return m_fiberid; }
+    uint64_t getTime() { return m_time; }
+    std::string getComtent( return m_content; )
 private:
     const char* m_file = nullptr;
     int32_t m_line = 0;
@@ -44,6 +53,20 @@ class LogFormatter{
 public:
     typedef std::shared_ptr<LogFormatter> ptr;
     std::string format(LogEvent::ptr event);
+    LogFormatter(const std::string& pattern);
+    void init();
+
+private:
+    class FormatItem{
+    public:
+        typedef std::shared_ptr<FormatItem> ptr;
+        virtual ~FormatItem();
+        virtual void format(std::ostream& os, LogEvent::ptr) = 0;
+    };
+
+private:
+    std::string m_pattern;
+    std::vector<FormatItem::ptr> m_items;
 };
 
 //日志输出地
@@ -54,7 +77,7 @@ public:
     virtual void Log(LogLevel::Level, LogEvent::ptr event) = 0;
 
     void setFormatter(LogFormatter::ptr mater) { m_format = mater; }
-    LogFormatter getFormatter() const { return m_format; }
+    LogFormatter::ptr getFormatter() const { return m_format; }
 
 protected:
     LogLevel::Level m_level;
