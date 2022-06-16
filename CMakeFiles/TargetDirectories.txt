@@ -1,0 +1,5 @@
+/data/Study/CPP/sylar/CMakeFiles/rebuild_cache.dir
+/data/Study/CPP/sylar/CMakeFiles/edit_cache.dir
+/data/Study/CPP/sylar/CMakeFiles/test.dir
+/data/Study/CPP/sylar/CMakeFiles/sylar_static.dir
+/data/Study/CPP/sylar/CMakeFiles/sylar.dir
