@@ -1,0 +1,34 @@
+log:
+    - name: root
+      level: info
+      formatter: '%d%T%m%n'
+      appander:
+          - type: FilLogAppender
+            path: log.txt
+          - type: StdoutLogAppender
+    - name: system
+      level: debug
+      formatter: '%d%T%m%n'
+      appander:
+          - type: FilLogAppender
+            path: log.txt
+          - type: StdoutLogAppender
+
+system:
+    port: 9900
+    value: 15
+    int_vec: 
+        - 10
+        - 30
+    int_list: [20, 40, 50]
+    int_set: [30, 60, 30]
+    int_uset: [30, 30, 30]
+    str_int_map: 
+        k : 30
+        v : 20
+        z : 10
+    str_int_umap: 
+        a : 1
+        b : 2
+        c : 2
+

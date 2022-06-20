@@ -70,17 +70,47 @@ CMakeFiles/sylar_static.dir/sylar/log.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar_static.dir/sylar/log.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/Study/CPP/sylar/sylar/log.cc -o CMakeFiles/sylar_static.dir/sylar/log.cc.s
 
+CMakeFiles/sylar_static.dir/sylar/util.cc.o: CMakeFiles/sylar_static.dir/flags.make
+CMakeFiles/sylar_static.dir/sylar/util.cc.o: sylar/util.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sylar_static.dir/sylar/util.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar_static.dir/sylar/util.cc.o -c /data/Study/CPP/sylar/sylar/util.cc
+
+CMakeFiles/sylar_static.dir/sylar/util.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar_static.dir/sylar/util.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/Study/CPP/sylar/sylar/util.cc > CMakeFiles/sylar_static.dir/sylar/util.cc.i
+
+CMakeFiles/sylar_static.dir/sylar/util.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar_static.dir/sylar/util.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/Study/CPP/sylar/sylar/util.cc -o CMakeFiles/sylar_static.dir/sylar/util.cc.s
+
+CMakeFiles/sylar_static.dir/sylar/config.cc.o: CMakeFiles/sylar_static.dir/flags.make
+CMakeFiles/sylar_static.dir/sylar/config.cc.o: sylar/config.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sylar_static.dir/sylar/config.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sylar_static.dir/sylar/config.cc.o -c /data/Study/CPP/sylar/sylar/config.cc
+
+CMakeFiles/sylar_static.dir/sylar/config.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar_static.dir/sylar/config.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /data/Study/CPP/sylar/sylar/config.cc > CMakeFiles/sylar_static.dir/sylar/config.cc.i
+
+CMakeFiles/sylar_static.dir/sylar/config.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar_static.dir/sylar/config.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /data/Study/CPP/sylar/sylar/config.cc -o CMakeFiles/sylar_static.dir/sylar/config.cc.s
+
 # Object files for target sylar_static
 sylar_static_OBJECTS = \
-"CMakeFiles/sylar_static.dir/sylar/log.cc.o"
+"CMakeFiles/sylar_static.dir/sylar/log.cc.o" \
+"CMakeFiles/sylar_static.dir/sylar/util.cc.o" \
+"CMakeFiles/sylar_static.dir/sylar/config.cc.o"
 
 # External object files for target sylar_static
 sylar_static_EXTERNAL_OBJECTS =
 
 lib/libsylar.a: CMakeFiles/sylar_static.dir/sylar/log.cc.o
+lib/libsylar.a: CMakeFiles/sylar_static.dir/sylar/util.cc.o
+lib/libsylar.a: CMakeFiles/sylar_static.dir/sylar/config.cc.o
 lib/libsylar.a: CMakeFiles/sylar_static.dir/build.make
 lib/libsylar.a: CMakeFiles/sylar_static.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library lib/libsylar.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library lib/libsylar.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/sylar_static.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sylar_static.dir/link.txt --verbose=$(VERBOSE)
 

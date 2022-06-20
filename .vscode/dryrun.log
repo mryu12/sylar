@@ -1,0 +1,51 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/data/yyf/Study/CPP/sylar'
+/usr/bin/cmake -S/data/Study/CPP/sylar -B/data/Study/CPP/sylar --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /data/Study/CPP/sylar/CMakeFiles /data/Study/CPP/sylar/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/data/yyf/Study/CPP/sylar'
+make -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/depend
+make[2]: Entering directory '/data/yyf/Study/CPP/sylar'
+cd /data/Study/CPP/sylar && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /data/Study/CPP/sylar /data/Study/CPP/sylar /data/Study/CPP/sylar /data/Study/CPP/sylar /data/Study/CPP/sylar/CMakeFiles/sylar.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/data/yyf/Study/CPP/sylar'
+make -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/build
+make[2]: Entering directory '/data/yyf/Study/CPP/sylar'
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=1 "Building CXX object CMakeFiles/sylar.dir/sylar/log.cc.o"
+/usr/bin/c++  -Dsylar_EXPORTS  -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -fPIC   -o CMakeFiles/sylar.dir/sylar/log.cc.o -c /data/Study/CPP/sylar/sylar/log.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=2 "Building CXX object CMakeFiles/sylar.dir/sylar/util.cc.o"
+/usr/bin/c++  -Dsylar_EXPORTS  -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -fPIC   -o CMakeFiles/sylar.dir/sylar/util.cc.o -c /data/Study/CPP/sylar/sylar/util.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --bold --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=3 "Linking CXX shared library lib/libsylar.so"
+/usr/bin/cmake -E cmake_link_script CMakeFiles/sylar.dir/link.txt --verbose=
+make[2]: Leaving directory '/data/yyf/Study/CPP/sylar'
+/usr/bin/cmake -E cmake_echo_color --switch= --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=1,2,3 "Built target sylar"
+make -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
+make[2]: Entering directory '/data/yyf/Study/CPP/sylar'
+cd /data/Study/CPP/sylar && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /data/Study/CPP/sylar /data/Study/CPP/sylar /data/Study/CPP/sylar /data/Study/CPP/sylar /data/Study/CPP/sylar/CMakeFiles/test.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/data/yyf/Study/CPP/sylar'
+make -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+make[2]: Entering directory '/data/yyf/Study/CPP/sylar'
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=7 "Building CXX object CMakeFiles/test.dir/tests/test.cc.o"
+/usr/bin/c++    -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function   -o CMakeFiles/test.dir/tests/test.cc.o -c /data/Study/CPP/sylar/tests/test.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --bold --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=8 "Linking CXX executable bin/test"
+/usr/bin/cmake -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=
+make[2]: Leaving directory '/data/yyf/Study/CPP/sylar'
+/usr/bin/cmake -E cmake_echo_color --switch= --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=7,8 "Built target test"
+make -f CMakeFiles/sylar_static.dir/build.make CMakeFiles/sylar_static.dir/depend
+make[2]: Entering directory '/data/yyf/Study/CPP/sylar'
+cd /data/Study/CPP/sylar && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /data/Study/CPP/sylar /data/Study/CPP/sylar /data/Study/CPP/sylar /data/Study/CPP/sylar /data/Study/CPP/sylar/CMakeFiles/sylar_static.dir/DependInfo.cmake --color=
+make[2]: Leaving directory '/data/yyf/Study/CPP/sylar'
+make -f CMakeFiles/sylar_static.dir/build.make CMakeFiles/sylar_static.dir/build
+make[2]: Entering directory '/data/yyf/Study/CPP/sylar'
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=4 "Building CXX object CMakeFiles/sylar_static.dir/sylar/log.cc.o"
+/usr/bin/c++    -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function   -o CMakeFiles/sylar_static.dir/sylar/log.cc.o -c /data/Study/CPP/sylar/sylar/log.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=5 "Building CXX object CMakeFiles/sylar_static.dir/sylar/util.cc.o"
+/usr/bin/c++    -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function   -o CMakeFiles/sylar_static.dir/sylar/util.cc.o -c /data/Study/CPP/sylar/sylar/util.cc
+/usr/bin/cmake -E cmake_echo_color --switch= --green --bold --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=6 "Linking CXX static library lib/libsylar.a"
+/usr/bin/cmake -P CMakeFiles/sylar_static.dir/cmake_clean_target.cmake
+/usr/bin/cmake -E cmake_link_script CMakeFiles/sylar_static.dir/link.txt --verbose=
+make[2]: Leaving directory '/data/yyf/Study/CPP/sylar'
+/usr/bin/cmake -E cmake_echo_color --switch= --progress-dir=/data/Study/CPP/sylar/CMakeFiles --progress-num=4,5,6 "Built target sylar_static"
+make[1]: Leaving directory '/data/yyf/Study/CPP/sylar'
+/usr/bin/cmake -E cmake_progress_start /data/Study/CPP/sylar/CMakeFiles 0
+make: Leaving directory '/data/yyf/Study/CPP/sylar'
+ 
