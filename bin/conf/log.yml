@@ -32,3 +32,32 @@ system:
         b : 2
         c : 2
 
+class:
+    person:
+        name: sylar
+        age: 22
+        sex: true
+    map:
+        sylar1:
+            name: sylar01
+            age: 18
+            sex: false
+        sylar2:
+            name: sylar02
+            age: 40
+            sex: true
+    vec_map:
+        k1:
+            - name: sylar01
+              age: 18
+              sex: false
+            - name: sylar02
+              age: 40
+              sex: true
+        k2:
+            - name: sylar01
+              age: 18
+              sex: false
+            - name: sylar02
+              age: 40
+              sex: true

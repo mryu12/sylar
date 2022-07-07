@@ -34,6 +34,8 @@ namespace sylar
 
         virtual std::string toString() = 0;
         virtual bool fromString(const std::string& val) = 0;
+        virtual std::string getTypeName() const = 0;
+
 
     protected:
         std::string m_name;
@@ -207,7 +209,7 @@ namespace sylar
         }
     };
 
-    //Map
+    //unordered_map
     template<class T>
     class LexicalCast<std::string, std::unordered_map<std::string, T> >{
     public:
@@ -240,7 +242,7 @@ namespace sylar
             return ss.str();
         }
     };
-
+ 
     //FromStr T operator() (const std::string&)
     //ToStr std::string T operator() (const T&)
     template<class T, class FromStr = LexicalCast<std::string, T>, 
@@ -273,13 +275,15 @@ namespace sylar
                 setValue(FromStr()(val));
             }catch(std::exception& e){
                 SYLAR_LOG_ERROR(SYLAR_LOG_ROOT()) << "ConfigVar::toString exception"
-                    << e.what() << "convert string to " << typeid(m_val).name();
+                    << e.what() << "convert string to " << typeid(m_val).name()
+                    << "-" << val;
             }
             return false;
         }
 
         const T getValue() { return m_val; }
         void setValue(const T& val) { m_val = val;}
+        std::string getTypeName() const override { return typeid(T).name(); }
         
     private:
         T m_val;
@@ -298,6 +302,11 @@ namespace sylar
                 if(tmp){
                     SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "Lookup name=" << name << "exists";
                     return tmp;
+                }else{
+                    SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "Lookup name=" << name << "exists but type not "
+                            << typeid(T).name() << " real_type=" << it->second->getTypeName()
+                            << " " << it->second->toString();
+                    return nullptr;
                 }
             }
 
